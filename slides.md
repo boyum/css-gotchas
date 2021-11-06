@@ -75,8 +75,6 @@ Cascading Style Sheets is a declarative language that makes it possible for us t
   width: 8rem;
 ">Hiya 🌼</div>
 
-<arrow v-click="2" v-click-hide="2" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
 ---
 
 # Box model
