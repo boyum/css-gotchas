@@ -1,35 +1,32 @@
 ---
 # try also 'default' to start simple
-theme: seriph
-background: https://images.unsplash.com/photo-1506792006437-256b665541e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80
+theme: apple-basic
+image: https://images.unsplash.com/photo-1601451978011-53cfe695ff2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80
 # apply any windi css classes to the current slide
-class: "text-center"
+
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
 lineNumbers: true
 # some information about the slides, markdown enabled
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  # CSS Gotchas
 
-  Learn more at [Sli.dev](https://sli.dev)
+  Small things that are crucial to know and understand to master Cascading Style Sheets
 # persist drawings in exports and build
 drawings:
   persist: false
+layout: intro-image
 ---
 
-# CSS Gotchas
-
-<div class="pt-12">
-  <button @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer focus:outline-none focus:bg-white focus:bg-opacity-10" hover="bg-white bg-opacity-10">
-    Let's go <carbon:arrow-right class="inline"/>
-  </button>
+<div class="absolute bottom-10">
+  <h1>CSS Gotchas</h1>
+  <p>The little things about CSS</p>
 </div>
 
-<div class="absolute bottom-4 left-0 text-center w-full"><a href="https://unsplash.com/photos/wHddViTmSvA" class="text-xs text-white text-opacity-60  !hover:text-white hover:text-opacity-100">Photo by Jason Leung</a></div>
+<div class="absolute bottom-2 right-4"><a href="https://unsplash.com/photos/UllJ5X5O980" class="text-xs text-white text-opacity-60  !hover:text-white hover:text-opacity-100">Photo by Sebastian Buratto</a></div>
 
-<div class="abs-br m-6 flex gap-2">
+<div class="abs-br right-2 bottom-6 flex gap-2">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>

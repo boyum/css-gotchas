@@ -7,8 +7,8 @@
   },
   "dependencies": {
     "@slidev/cli": "^0.27.0",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest"
+    "@slidev/theme-apple-basic": "^0.20.0",
+    "@slidev/theme-default": "latest"
   },
   "devDependencies": {
     "playwright-chromium": "^1.16.3"
