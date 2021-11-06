@@ -3,7 +3,7 @@
 theme: seriph
 background: https://images.unsplash.com/photo-1506792006437-256b665541e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80
 # apply any windi css classes to the current slide
-class: 'text-center'
+class: "text-center"
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
@@ -47,7 +47,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 # What is CSS?
 
-Cascading Style Sheets is a declarative language that makes it possible for us to style HTML pages. There are multiple different ways to add CSS to a
+Cascading Style Sheets is a declarative language that makes it possible for us to style HTML pages. There are multiple different ways to add CSS to a document, but we'll get to that.
 
 ```css{all|all|2|3|4|5-6|7,9|8}
 .my-element {
@@ -116,7 +116,7 @@ Given that no properties are repeated within the same selector, this generally d
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
 
-### Keyboard Shortcuts
+## Keyboard Shortcuts
 
 |                                                    |                             |
 | -------------------------------------------------- | --------------------------- |
@@ -138,7 +138,7 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 ---
 
 layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+image: <https://source.unsplash.com/collection/94734566/1920x1080>
 
 ---
 
@@ -148,16 +148,16 @@ Use code snippets and get the highlighting directly![^1]
 
 ```ts {all|2|1-6|9|all}
 interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
+  id: number;
+  firstName: string;
+  lastName: string;
+  role: string;
 }
 
 function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}
-  saveUser(id, newUser)
+  const user = getUser(id);
+  const newUser = { ...user, ...update };
+  saveUser(id, newUser);
 }
 ```
 
@@ -215,7 +215,9 @@ Check out [the guides](https://sli.dev/builtin/components.html) for more.
 
 # Themes
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+Slidev comes with powerful theming support. Themes can provide styles, layouts,
+components, or even configurations for tools. Switching between themes by just
+**one edit** in your frontmatter:
 
 <div grid="~ cols-2 gap-2" m="-t-2">
 
@@ -231,9 +233,9 @@ theme: seriph
 ---
 ```
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
+<img border="rounded" alt="" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
+<img border="rounded" alt="" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
 
 </div>
 
@@ -249,12 +251,7 @@ check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
 Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
 
 ```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
+<div v-motion :initial="{ x: -80 }" :enter="{ x: 0 }">Slidev</div>
 ```
 
 <div class="w-60 relative mt-6">
@@ -282,7 +279,7 @@ Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
     />
   </div>
 
-  <div 
+  <div
     class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
     v-motion
     :initial="{ x: -80, opacity: 0}"
