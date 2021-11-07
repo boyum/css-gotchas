@@ -187,7 +187,7 @@ Say you want to position an element with `top` and `left` within its container.
 
 # Property ordering
 
-Given that no properties are repeated within the same selector, this generally doesn't matter, but for clean code purposes, using
+Given that no properties are repeated within the same selector, this generally doesn't matter, but for clean code purposes, using some kind of pre-determined ordering helps. I myself prefer alphabetical order, while some other people like to group the properties by functionality.
 
 ---
 
