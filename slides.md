@@ -1,89 +1,25 @@
 ---
 theme: apple-basic
-image: >-
-  https://images.unsplash.com/photo-1601451978011-53cfe695ff2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80
 highlighter: shiki
 lineNumbers: true
 info: >
   # CSS Gotchas
 
-
   Small things that are crucial to know and understand to master Cascading Style
   Sheets
 drawings:
   persist: false
-layout: intro-image
+
+src: ./slides/welcome.md
 ---
 
-<div class="absolute bottom-10">
-  <h1>CSS Gotchas</h1>
-  <p>The little CSS things</p>
-</div>
-
-<div class="absolute bottom-2 right-4"><a href="https://unsplash.com/photos/UllJ5X5O980" class="text-xs text-white text-opacity-60  !hover:text-white hover:text-opacity-100">Photo by Sebastian Buratto</a></div>
-
-<div class="abs-br right-2 bottom-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
+---
+src: ./slides/what-is-css.md
 ---
 
-# What is CSS?
-
-Cascading Style Sheets is a declarative language that makes it possible for us to style HTML pages. There are multiple different ways to add CSS to a document, but we'll get to that.
-<br />
-<br />
-First, an example of different properties:
-
-```css{all|all|1|2|3|4|5-6|7-9}
-.✨ {
-  background-color: rebeccapurple;
-  border-radius: 2ex;
-  box-shadow: 1px 6px 25px 6px #66339955;
-  color: rgb(255 255 255 / 1);
-  font-family: 'IBM Plex Mono', monospace;
-  height: 8rem;
-  padding: 16px 2ch;
-  width: 12em;
-}
-```
-
-<br />
-
-<div v-click="1" style="
-  background-color: rebeccapurple;
-  border-radius: 2ex;
-  box-shadow: 1px 6px 25px 6px #66339955;
-  color: rgb(255 255 255 / 1);
-  font-family: 'IBM Plex Mono', monospace;
-  height: 8rem;
-  padding: 16px 2ch;
-  width: 12em;
-">Hiya 🌼</div>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
-</style>
-
-<!--
-First is what's called the selector. We can select a whole lot of things, such as class names, element tags and element ids. CSS supports Unicode, which means we can use any character for the class name, even emoji!
-
-To set the purple background color, we use the `background-color` property. There are many different ways to define colors, and one of them is with color names, such as rebeccapurple, hotpink and tomato.
-
-`border-radius` is a property we use to shave off parts of the element's corners. We can set the value in absolute units, or use percentages. A border-radius of anything more than 50% will make the element circular.
-
-The next property is `box-shadow`. We can use it to add a blurred shadow underneath the element. The shadow will be in the shape of the element, even if we have used border-radius to alter it.
-
-`color` sets the text color of the element. We see the third way of defining a color, all within the same red-green-blue color space.
-
-`height` and `width` sets the dimensions of the element, while lastly `padding` sets the inside spacing of the element – the space between the edge and the content inside. `padding` is actually a shorthand property for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`, but we'll get to that.
--->
+---
+src: ./slides/css-properties.md
+---
 
 ---
 
