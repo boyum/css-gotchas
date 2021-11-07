@@ -21,7 +21,7 @@ layout: intro-image
 
 <div class="absolute bottom-10">
   <h1>CSS Gotchas</h1>
-  <p>The little things about CSS</p>
+  <p>The little CSS things</p>
 </div>
 
 <div class="absolute bottom-2 right-4"><a href="https://unsplash.com/photos/UllJ5X5O980" class="text-xs text-white text-opacity-60  !hover:text-white hover:text-opacity-100">Photo by Sebastian Buratto</a></div>
@@ -45,17 +45,20 @@ The last comment block of each slide will be treated as slide notes. It will be 
 # What is CSS?
 
 Cascading Style Sheets is a declarative language that makes it possible for us to style HTML pages. There are multiple different ways to add CSS to a document, but we'll get to that.
+<br />
+<br />
+First, an example of different properties:
 
-```css{all|all|2|3|4|5-6|7,9|8}
-.my-element {
+```css{all|all|1|2|3|4|5-6|7-9}
+.✨ {
   background-color: rebeccapurple;
-  border-radius: 0.5rem;
+  border-radius: 2ex;
   box-shadow: 1px 6px 25px 6px #66339955;
-  color: white;
-  font-family: monospace;
+  color: rgb(255 255 255 / 1);
+  font-family: 'IBM Plex Mono', monospace;
   height: 8rem;
-  padding: 8px;
-  width: 8rem;
+  padding: 16px 2ch;
+  width: 12em;
 }
 ```
 
@@ -63,18 +66,112 @@ Cascading Style Sheets is a declarative language that makes it possible for us t
 
 <div v-click="1" style="
   background-color: rebeccapurple;
-  border-radius: 0.5rem;
+  border-radius: 2ex;
   box-shadow: 1px 6px 25px 6px #66339955;
-  color: white;
-  font-family: monospace;
+  color: rgb(255 255 255 / 1);
+  font-family: 'IBM Plex Mono', monospace;
   height: 8rem;
-  padding: 8px;
-  width: 8rem;
+  padding: 16px 2ch;
+  width: 12em;
 ">Hiya 🌼</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+</style>
+
+<!--
+First is what's called the selector. We can select a whole lot of things, such as class names, element tags and element ids. CSS supports Unicode, which means we can use any character for the class name, even emoji!
+
+To set the purple background color, we use the `background-color` property. There are many different ways to define colors, and one of them is with color names, such as rebeccapurple, hotpink and tomato.
+
+`border-radius` is a property we use to shave off parts of the element's corners. We can set the value in absolute units, or use percentages. A border-radius of anything more than 50% will make the element circular.
+
+The next property is `box-shadow`. We can use it to add a blurred shadow underneath the element. The shadow will be in the shape of the element, even if we have used border-radius to alter it.
+
+`color` sets the text color of the element. We see the third way of defining a color, all within the same red-green-blue color space.
+
+`height` and `width` sets the dimensions of the element, while lastly `padding` sets the inside spacing of the element – the space between the edge and the content inside. `padding` is actually a shorthand property for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`, but we'll get to that.
+-->
 
 ---
 
-# Box model
+# The box model
+
+On the previous slide, we used the `padding` property to add space _inside_ an element. Padding is not the only spacing property - we also have `margin` and `border`.
+
+```css{3,5-12|4}
+.📦 {
+  background-color: hsl(214deg 72% 72%);
+  border: 12px solid hsl(214deg 72% 60%);
+  box-shadow: 0 0 0 1rem hsl(214deg 72% 52%);
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+```
+
+<div class="flex">
+<div style="
+  background-color: hsl(214deg 72% 72%);
+  border: 12px solid hsl(214deg 72% 60%);
+  box-shadow: 0 0 0 1rem hsl(214deg 72% 52%);
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+">Here's some content 💃</div>
+
+<div style="
+  background-color: hsl(214deg 72% 72%);
+  border: 12px solid hsl(214deg 72% 60%);
+  box-shadow: 0 0 0 1rem hsl(214deg 72% 52%);
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+">Here's some more 💃</div>
+</div>
+
+<!--
+The three different components of the CSS box model is `margin`, `border` and `padding`. All of these add up when calculating the size of the element. An element with none of these, and no `height` or `width` set will get its size from its contents. Many people find it hard to remember the difference between `margin` and `padding`, but try to think of it like this: `margin` is for the element what `padding` is for its contents. 
+
+Just as a side note: To visualize the `margin`, which is inherently transparent, I've used `box-shadow`. Together with `outline`, `box-shadow` is not part of the box model, simply because it does not take up any space. Therefore, `box-shadow` can be used in a few different hacks like this.
+-->
+
+---
+
+# `display`
+
+The display property has loads of different values it can be set to. A few are `block`, `flex`, `grid`, `table`, `inline`, `inline-block` and `none`. Each of these do wildly different things and if you get these right, layouting will become much easier.
+
+- inline vs block
+
+<!--
+A few elements are `inline` as default. Some are `span`, `image`, `strong` and `a`. These will not take up more space vertically even if they have `padding` set. These also cannot be transformed with the `transform` property, and the `height` and `width` properties have no effect on them.
+
+Block elements, on the other hand, will by default be as wide as their container, and we cannot put another element next to them (unless the parent has display: flex or grid). Therefore, setting an inline element to display as a block might not be what we want. As a middle ground, a transformable, content-wide element, we can use `display: inline-block`.
+-->
+
+---
+
+# `height` and how to set percentages
+
+---
+
+# `display: none` vs `visibility: hidden` vs `opacity: 0`
 
 ---
 
@@ -92,6 +189,10 @@ Say you want to position an element with `top` and `left` within its container.
 
 ---
 
+# Margin collapse
+
+---
+
 # Property ordering
 
 Given that no properties are repeated within the same selector, this generally doesn't matter, but for clean code purposes, using
@@ -106,6 +207,18 @@ Given that no properties are repeated within the same selector, this generally d
 
 - Code splitting
 - Avoid selectors leaking (scoped styles)
+
+---
+
+# Transitions
+
+---
+
+# box-sizing
+
+---
+
+# Centering horizontally
 
 ---
 
@@ -316,7 +429,7 @@ const final = {
 
 LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
 
-<br>
+<br />
 
 Inline $\sqrt{3x-1}+(1+x)^2$
 
@@ -335,7 +448,7 @@ $$
 \end{array}
 $$
 
-<br>
+<br />
 
 [Learn more](https://sli.dev/guide/syntax#latex)
 
