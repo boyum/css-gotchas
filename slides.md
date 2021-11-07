@@ -107,10 +107,9 @@ On the previous slide, we used the `padding` property to add space _inside_ an e
 }
 ```
 
-<div class="flex">
 <div style="
   background-color: hsl(214deg 72% 72%);
-  border: 12px solid hsl(214deg 72% 60%);
+  border: 1rem solid hsl(214deg 72% 60%);
   box-shadow: 0 0 0 1rem hsl(214deg 72% 52%);
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -120,23 +119,9 @@ On the previous slide, we used the `padding` property to add space _inside_ an e
   padding-right: 2rem;
   padding-bottom: 1rem;
   padding-left: 2rem;
-">Here's some content 💃</div>
-
-<div style="
-  background-color: hsl(214deg 72% 72%);
-  border: 12px solid hsl(214deg 72% 60%);
-  box-shadow: 0 0 0 1rem hsl(214deg 72% 52%);
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-">Here's some more 💃</div>
+">
+  Here's some content 💃
 </div>
-
 <!--
 The three different components of the CSS box model is `margin`, `border` and `padding`. All of these add up when calculating the size of the element. An element with none of these, and no `height` or `width` set will get its size from its contents. Many people find it hard to remember the difference between `margin` and `padding`, but try to think of it like this: `margin` is for the element what `padding` is for its contents. 
 
