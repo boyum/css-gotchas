@@ -1,19 +1,15 @@
 ---
-# try also 'default' to start simple
 theme: apple-basic
-image: https://images.unsplash.com/photo-1601451978011-53cfe695ff2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80
-# apply any windi css classes to the current slide
-
-# https://sli.dev/custom/highlighters.html
+image: >-
+  https://images.unsplash.com/photo-1601451978011-53cfe695ff2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: true
-# some information about the slides, markdown enabled
-info: |
+info: >
   # CSS Gotchas
 
-  Small things that are crucial to know and understand to master Cascading Style Sheets
-# persist drawings in exports and build
+
+  Small things that are crucial to know and understand to master Cascading Style
+  Sheets
 drawings:
   persist: false
 layout: intro-image
@@ -35,10 +31,6 @@ layout: intro-image
     <carbon-logo-github />
   </a>
 </div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
 
 ---
 
